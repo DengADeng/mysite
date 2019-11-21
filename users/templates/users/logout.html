@@ -1,0 +1,19 @@
+{% extends 'entries/base.html' %}
+
+{% block content %}
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+            <!-- Blog Post -->
+            <div class="card mb-4 mt-4">
+                <div class="card-body">
+                    <h2 class="card-title mb-4"> You have successfully logged out!</h2>
+                    <h3 class="card-title"><a href="{%url 'users:login'%}"> Login again here</a></h3>
+                    <h3 class="card-title"><a href="{%url 'entries:blog-home'%}"> Back to homepage</a></h3>
+                </div>
+
+            </div>
+
+
+        </div>
+
+{% endblock %}

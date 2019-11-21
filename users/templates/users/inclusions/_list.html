@@ -1,0 +1,16 @@
+<h5 class="card-header">There are <span>{{ comment_count }}</span> comments:</h5>
+<ul class="comment-list list-unstyled">
+  {% for comment in comment_list %}
+    <li class="comment">
+        <hr>
+      <h5><span class="comment-name pl-2">{{ comment.comment_name }}</span>
+        <time class="date pl-2" datetime="{{ comment.created_time }}">created at {{ comment.created_time }}</time></h5>
+      <div class="comment-text ml-2">
+        {{ comment.text|linebreaks }}
+      </div>
+        <hr>
+    </li>
+  {% empty %}
+    <li class="ml-4 mt-4 mb-4"><h5>No comments now.</h5></li>
+  {% endfor %}
+</ul>
