@@ -1,53 +1,47 @@
 {% extends 'entries/base.html' %}
-{% load comments_extras %}
+
 {% block content %}
-  <!-- Page Content -->
-
-  <div class=" col-lg-8 col-md-8">
-      <!-- Post Content Column -->
-      {% if messages %}
-        {% for message in messages %}
-       <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                aria-hidden="true">&times;</span></button>
-        {{ message }}
-      </div>
-        {% endfor %}
-        {% endif %}
-      <div class="col-lg-12 card mt-4 mb-4">
-        <!-- Title -->
-        <h1 class="mt-4">{{entry.entry_title}}</h1>
-
-        <!-- Author -->
-        <p class="lead">
-          by
-          <a href="#">{{entry.entry_author}}</a>
-        </p>
-
-        <hr>
-
-        <!-- Date/Time -->
-        <p >{{entry.entry_date}}</p>
-
-
-
-        <!-- Post Content -->
-        <div class="lead">{{entry.entry_text|safe}}</div>
-
-
-      </div>
-
-        <!-- Comments Form-->
-
-        <div class="card mt-4 mb-4">
-          <h5 class="card-header">Leave a Comment:</h5>
-          <div class="card-body ">
-              {% show_comment_form entry %}
-          </div>
-
+<section class="resume-section p-3 p-lg-5 d-flex justify-content-center ml-4">
+  <div class="w-100">
+    <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+      <div class="w-100">
+        <div>
+        <h2 class="mb-3">{{ entry.entry_title}} </h2>
+        <div class="resume-date text-md-left mb-3">
+        <span class="text-primary pt-2">{{entry.entry_date}}</a></span>
         </div>
-        <div class="card mt-4 mb-4">
-                {% show_comments entry %}
-            </div>
+        </div>
+        <div class="subheading mb-3">{{entry.entry_excerpt}}</div>
+        <!--<p>内容：Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.
+        User generated content in real-time will have multiple touchpoints for offshoring.</p>-->
+          <p>{{entry.entry_text|safe}}</p>
+      </div>
+
+    </div>
+    <div id="disqus_thread"></div>
+      <script>
+
+      /**
+      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+      /*
+      var disqus_config = function () {
+      this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+      */
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://thelinblog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
+
+</section>
+
+<hr class="m-0">
+
 {% endblock %}

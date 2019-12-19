@@ -5,123 +5,86 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>LINNNN DE BLOGS</title>
-    <!-- Bootstrap core CSS -->
-    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="{% static 'css/blog-home.css' %}" rel="stylesheet">
-    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+  <title>Lin的个人博客</title>
 
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/resume.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/basic.css' %}" rel="stylesheet">
 </head>
 
-<body>
+<body id="page-top">
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="{% url 'entries:blog-home'%}">LINNN'S BLOGS</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href = "{% url 'entries:blog-home' %}">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                {% if not user.is_authenticated%}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'users:login'%}">LOGIN</a>
-                </li>
-                {% endif %}
-                {% if user.is_authenticated%}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'users:logout' %}">LOGOUT</a>
-                </li>
-                {% endif %}
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Jiajun Lin</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{% static 'img/me.jpg' %}" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="{% url 'entries:blog-home'%}">首页</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="{% url 'entries:category'%}">分类</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" id="search" href="#" >搜索</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" id="basic-modal" href="#">关于</a>
+        </li>
 
-            </ul>
-        </div>
+        
+      </ul>
     </div>
-</nav>
+  </nav>
+  <div  class="ml-5 mr-4" id="hide-content">
+    <script async src="https://cse.google.com/cse.js?cx=017643632253836919490:vlw1jyhijuw"></script>
+    <div id="search-content">
+      <div class="gcse-search"></div>
+    </div>
+    <div id="basic-modal-content">
+      <div class="basic-modal">
+        <h3>Jiajun Lin</h3>
+        <code>美国不知名大学硕士就读中</code>
+        <code>前端爱好者</code>
+        <code>好好学习中。。</code>
 
-<!-- Page Content -->
-<div class="container">
-
-    <div class="row">
-        {% block content %} {% endblock %}
-        <!-- Sidebar Widgets Column -->
-
-            <!-- Search Widget
-            <div class="card my-4">
-                <h5 class="card-header">Search</h5>
-                <div class="card-body">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button">Go!</button>
-              </span>
-                    </div>
-                </div>
-            </div>
-            -->
-            <!-- Categories Widget -->
-
-        <div class="col-md-4">
-            <!-- Side Widget -->
-            <div class="card my-4">
-                <h5 class="card-header">Account information</h5>
-                <div class="card-body">
-                    {% if user.is_authenticated %}
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <p><strong>Username:</strong>  {{user.username}}</p>
-                        </li>
-                        <li>
-                            <p><strong>email:</strong>  {{user.email}}</p>
-                        </li>
-                        {% if user.is_superuser %}
-                        <li class="nav-item">
-                            <a class="link" href="{% url 'entries:create_entry' %}">Post blog</a>
-                        </li>
-                        {% endif %}
-                    </ul>
-                    {% endif %}
-                </div>
-            </div>
-
-        </div>
+      </div>
+    </div>
 
     </div>
-    <!-- /.row -->
+  {% block content %} {% endblock %}
 
-</div>
-<!-- /.container -->
 
-<!-- Footer -->
-<footer class="py-3 bg-dark fixed-bottom">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Lin 2019</p>
-    </div>
-    <!-- /.container -->
-</footer>
 
-<!-- Bootstrap core JavaScript -->
-<script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
-<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
-<script>
-    hljs.initHighlightingOnLoad();
-    hljs.initLineNumbersOnLoad();
-</script>
+
+    <hr class="m-0">
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'js/jquery.js'  %}"></script>
+  <!-- Plugin JavaScript -->
+  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'js/jquery.simplemodal.js' %}"></script>
+  <!-- Custom scripts for this template -->
+  <script src="{% static 'js/basic.js' %}"></script>
 </body>
 
 </html>

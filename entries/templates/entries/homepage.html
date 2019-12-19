@@ -1,0 +1,46 @@
+{% extends 'entries/base.html' %}
+
+{% block content %}
+<section class="resume-section p-3 p-lg-5 d-flex justify-content-center ml-4 mr-4">
+  <div class="w-100">
+
+    <h2 class="mb-5">blog</h2>
+    {% for entry in blog_entries%}
+    <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+      <div>
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+        <h3 class="mb-0">{{ entry.entry_title}} </h3>
+        <div class="resume-date text-md-right">
+        <span class="text-primary pt-2">{{entry.entry_date}}</a></span>
+        </div>
+        </div>
+          <div class="mb-3">发布在 <a href="{% url 'entries:category'%}">{{entry.category}}</a></div>
+        <p>内容：{{entry.entry_excerpt}}</p>
+        <p>内容：Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+        <a href="{% url 'entries:entry_detail' entry.pk %}" >阅读更多</a>
+      </div>
+
+    </div>
+    {% endfor %}
+    <!-- Pagination -->
+        {% if is_paginated %}
+        <ul class="pagination justify-content-center mb-4">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a href="?page={{page_obj.previous_page_number}}">&larr; 上一页</a>
+            </li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a href="?page={{page_obj.next_page_number}}">下一页 &rarr;</a>
+            </li>
+            {% endif %}
+        </ul>
+        {% endif %}
+  </div>
+
+</section>
+
+<hr class="m-0">
+
+{% endblock %}

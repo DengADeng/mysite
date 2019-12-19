@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.html import strip_tags
 from django.urls import reverse
+from mdeditor.fields import MDTextField
 import markdown
 
 
@@ -34,7 +35,7 @@ class Tag(models.Model):
 
 class Entry(models.Model):
     entry_title = models.CharField(max_length=50)
-    entry_text = models.TextField(default="")
+    entry_text = MDTextField(default="")
     entry_date = models.DateTimeField(auto_now_add= True)
     entry_excerpt = models.CharField(max_length=200, blank=True)
     entry_author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -65,6 +66,6 @@ class Entry(models.Model):
         # 先将 Markdown 文本渲染成 HTML 文本
         # strip_tags 去掉 HTML 文本的全部 HTML 标签
         # 从文本摘取前 54 个字符赋给 excerpt
-        self.entry_excerpt = strip_tags(md.convert(self.entry_text))[:34]
+        self.entry_excerpt = strip_tags(md.convert(self.entry_text))[:54]
 
         super().save(*args, **kwargs)

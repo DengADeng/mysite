@@ -1,0 +1,33 @@
+{% extends 'entries/base.html' %}
+
+{% block content %}
+<section class="resume-section p-3 p-lg-5 d-flex justify-content-center ml-4 mr-4">
+  <div class="w-100">
+    <h2 class="mb-4">Category</h2>
+      <ul class="list-inline">
+        {% for category in categories %}
+          <li class="list-inline-item"><a href="#{{ category.name }}">{{ category.name }}</a></li>
+        {% endfor %}
+        </ul>
+      {% for category in categories %}
+      <div class="mt-5 mb-3">
+          <h4 class="subheading" id="{{ category.name }}">{{ category.name }}</h4>
+          <ul class="list-unstyled">
+            {% for entry in entries %}
+              {% if entry.category %}
+                {% ifequal category entry.category %}
+              <li class="ml-4"><a href="{% url 'entries:entry_detail' entry.pk %}">{{entry.entry_title}}</a></li>
+                {% endifequal %}
+              {% endif %}
+            {% endfor %}
+          </ul>
+      </div>
+      {% endfor %}
+
+    </div>
+
+</section>
+
+<hr class="m-0">
+
+{% endblock %}
