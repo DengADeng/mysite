@@ -1,42 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f763b38-7131-4440-b57a-48ffc8dbba60" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entries/ExteriorAuthMiddleware.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/entries/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/entries/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entries/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/entries/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entries/static/css/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/entries/static/css/blog-home.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/entries/templates/entries/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/entries/templates/entries/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entries/templates/entries/create_entry.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/entries/templates/entries/entry_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/entries/templates/entries/entry_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entries/templates/entries/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/entries/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/entries/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entries/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/entries/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/form.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0002_auto_20191118_1113.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/users/inclusions/_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/users/inclusions/_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/users/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/users/logout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/users/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templatetags/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templatetags/comments_extras.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" />
-    </list>
+    <list default="true" id="2f763b38-7131-4440-b57a-48ffc8dbba60" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +79,14 @@
       <option name="presentableId" value="Default" />
       <updated>1573187243525</updated>
     </task>
+    <task id="LOCAL-00001" summary="new version">
+      <created>1576733020604</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576733020604</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -132,5 +105,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="new version" />
+    <option name="LAST_COMMIT_MESSAGE" value="new version" />
   </component>
 </project>
